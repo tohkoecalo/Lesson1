@@ -1,14 +1,28 @@
 "use strict";
 
-const userFirstName = "Vasya";
-const userLastName = "Pupkin";
+const capitalise = (input) => {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+}
 
-const userBirthDay = prompt("Enter birth day");
-const userBirthMonth = prompt("Enter birth month");
-const userBirthYear = prompt("Enter birth year");
+console.log('capitalise for "abc" returns ' + capitalise('abc'));
 
-const userAge = 2022 - userBirthYear;
+const isEven = (input) => {
+    return input % 2 === 0;
+}
 
-alert(`${userLastName} ${userFirstName} \nDate of birth: ${userBirthDay}.${userBirthMonth}.${userBirthYear} \nAge is ${userAge} years`);
+console.log('isEven for 2 returns ' + isEven(2));
+console.log('isEven for 3 returns ' + isEven(3));
 
+const getDigitsSum = (input) => {
+    let result = 0;
 
+    while (input > 0) {
+        result += input % 10;
+        input = Math.floor(input / 10); // wtf
+    }
+
+    return result;
+}
+
+console.log('getDigitsSum for 15 returns ' + getDigitsSum(15));
+console.log('getDigitsSum for 9000 returns ' + getDigitsSum(9000));
